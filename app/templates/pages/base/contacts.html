@@ -1,0 +1,153 @@
+{% load static %}
+<section id="contact" class="section section-a fullscreen-h-lg">
+    <div class="section-title title-anim">
+      <div data-anim-visible='zoom-in'>
+        <h2 class="text">Cвяжитесь с нами</h2>
+      </div>
+    </div>
+    <!-- Begin of section body -->
+    <div class="section-body section-contact" itemscope itemtype="https://schema.org/Organization">
+      <!-- content -->
+      <div class="section-content container content-width anim">
+        <div class="row justify-content-between">
+          <div class="col-12 col-lg-6 text-left">
+            <!-- title and description -->
+            <div class="title-desc">
+              <h2 class="display-3 anim-1 mb-4" data-anim-visible='fade'>Контакты</h2>
+              <div class="d-flex align-items-center  anim-2" data-anim-visible='fade'>
+                <a class="email email-main btn-inline" href="mailto:{{settings.email}}"
+                  itemprop="email">{{settings.email}}</a>
+                <button class="btn-fab btn-white ms-3" data-bs-toggle="modal" data-bs-target="#messageModal">
+                  <span class="icon"><i class="ion-md-mail"></i></span>
+                </button>
+              </div>
+              <p class="anim-3" data-anim-visible='fade'>Не стесняйтесь задавать нам любые вопросы, связанные с нашей деятельностью.
+                Мы будем рады
+                вам ответить.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal modal-a " id="messageModal" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog popup-container">
+            <div class="modal-content">
+              <div class="popup-header">
+                <div class="title">
+                  Write to us
+                </div>
+                <div class="btns-group">
+                  <button class="btn-icon btn-white ms-3" data-bs-dismiss="modal">
+                    <span class="icon"><i class="ion-md-close"></i></span>
+                  </button>
+                </div>
+              </div>
+              <div class="popup-body">
+                <form id="form-message" class="form-a form-message form-message" method="post"
+                  action="{% static 'ajaxserver/serverfile.php' %}">
+                  <div class="mb-3">
+                    <label for="name-message" class="form-label">Name</label>
+                    <input type="text" class="form-control form-control-a" id="name-message"
+                      placeholder="Firstname Lastname" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="email-message" class="form-label">Email</label>
+                    <input type="email" class="form-control form-control-a" id="email-message"
+                      placeholder="your@email.com" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="message-message" class="form-label">Message</label>
+                    <textarea class="form-control form-control-b" id="message-message"
+                      placeholder="Hello, your message" required></textarea>
+                  </div>
+                  <div class="mt-4">
+                    <button class="btn btn-solid btn-white rounded-pill" type="submit">
+                      <span class="text">Send message</span>
+                    </button>
+                    <div class="error-show">
+                      <p class="">Ooops, an error happened</p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <form class="form-contact">
+
+          </form>
+        </div>
+
+        <style>
+          /* Scoped styles for contact links */
+          .contact-link {
+            color: #fff !important;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+            padding-bottom: 2px;
+            transition: color .2s ease, border-color .2s ease;
+          }
+          .contact-link:hover { border-color: rgba(255, 255, 255, 0.85); }
+          .contact-icon { opacity: .9; }
+        </style>
+
+        <div class="row mt-4 anim-4">
+          <div class="col-12 col-lg-4 mb-4 text-left">
+            <div itemprop="department" itemscope itemtype="https://schema.org/Place" data-anim-visible='fade'>
+              <h4 class="dep-name" itemprop="name">
+                <strong>Свяжитесь с нами</strong>
+              </h4>
+              <div class="dep-address" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <div class="addr-line d-flex align-items-center gap-2 flex-sm-wrap flex-md-nowrap">
+                  <span class="me-1 text-nowrap">Телефон:</span>
+                  <a class="d-inline-flex align-items-center gap-2 contact-link" href="tel:{{ settings.phone }}" itemprop="telephone">
+                    <span class="icon contact-icon"><i class="ion ion-md-call"></i></span>
+                    <span class="text">{{ settings.phone }}</span>
+                  </a>
+                </div>
+                <div class="addr-line d-flex align-items-center gap-2 flex-sm-wrap flex-md-nowrap mt-2">
+                  <span class="me-1 text-nowrap">Адрес:</span>
+                  <a class="d-inline-flex align-items-center gap-2 flex-grow-1 contact-link" 
+                     href="https://www.google.com/maps/search/?api=1&query={{ settings.locate|urlencode }}" target="_blank" rel="noopener" itemprop="streetAddress" style="min-width:0;">
+                    <span class="icon contact-icon"><i class="ion ion-md-pin"></i></span>
+                    <span class="text">{{ settings.locate }}</span>
+                  </a>
+                </div>
+                <div class="addr-line d-flex align-items-center gap-2 flex-sm-wrap flex-md-nowrap mt-2">
+                  <span class="me-1 text-nowrap">Email:</span>
+                  <a class="d-inline-flex align-items-center gap-2 flex-grow-1 contact-link" href="mailto:{{ settings.email }}" itemprop="email" style="min-width:0;">
+                    <span class="icon contact-icon"><i class="ion ion-md-mail"></i></span>
+                    <span class="text">{{ settings.email }}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 col-lg-4">
+            <div class="row justify-content-lg-end">
+              <div class="col-auto">
+                <nav class="nav-list" data-anim-visible='fade'>
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="demo.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="gallery.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#an_url">Another link</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- End of section body -->
+
+  </section>

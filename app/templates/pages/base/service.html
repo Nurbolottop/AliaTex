@@ -1,0 +1,29 @@
+{% load static %}
+<div class="section-content content-full px-0 anim scroll-container">
+
+    <!-- Slider main container -->
+    <div class="scroll-simple-a ">
+      <!-- scroll wrapper -->
+      <div class="scroll-wrapper">
+        <div class="scroll-slides">
+          <!-- Slides -->
+          {% for service in services %}
+          <div class="scroll-slide slide-item-b">
+            <div class="item-wrapper">
+              <div class="item-image rounded-md scale-1">
+                <img src="{{service.image.url}}" alt="image">
+              </div>
+              <div class="item-content">
+                <h5 class="subtitle speed-1">Projects</h5>
+                <h3 class="title speed-3">{{service.title}}</h3>
+                <h4 class="category speed-2">{{service.category}}</h4>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <!-- controls -->
+      <div class="scoll-btns"></div>
+    </div>
+  </div>

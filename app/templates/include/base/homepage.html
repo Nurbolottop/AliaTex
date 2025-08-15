@@ -1,0 +1,112 @@
+{% load static %}
+<!doctype html>
+<!--
+Website By Miradontsoa / Highhay
+http://twitter.com/miradontsoa
+http://highhay.com
+contact at highhay dot com
+-->
+<html class="no-js smooth-scroll" lang="ru">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <!-- Page Title Here -->
+  <title>{% if settings %}{{ settings.title }}{% if settings.slogan %} — {{ settings.slogan }}{% endif %}{% else %}Raya{% endif %}</title>
+
+  <!-- Meta -->
+  <!-- Page Description Here -->
+  <meta name="description" content="{% if settings and settings.description %}{{ settings.description|striptags|truncatechars:160 }}{% else %}Креативное портфолио и услуги. Современный адаптивный сайт с плавными анимациями.{% endif %}">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{% if request %}{{ request.build_absolute_uri }}{% else %}/{% endif %}">
+
+  <!-- Disable screen scaling-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, shrink-to-fit=no">
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if settings %}{{ settings.title }}{% if settings.slogan %} — {{ settings.slogan }}{% endif %}{% else %}Raya{% endif %}">
+  <meta name="twitter:description" content="{% if settings and settings.description %}{{ settings.description|striptags|truncatechars:200 }}{% else %}Креативное портфолио, услуги и кейсы.{% endif %}">
+  <meta name="twitter:image" content="{% if settings and settings.logo %}{{ settings.logo.url }}{% else %}{% static 'img/bg-default.jpg' %}{% endif %}">
+
+  <!-- Facebook Meta -->
+  <meta property="og:url" content="{% if request %}{{ request.build_absolute_uri }}{% else %}/{% endif %}">
+  <meta property="og:site_name" content="{% if settings %}{{ settings.title }}{% else %}Raya{% endif %}">
+  <meta property="og:title" content="{% if settings %}{{ settings.title }}{% if settings.slogan %} — {{ settings.slogan }}{% endif %}{% else %}Raya{% endif %}">
+  <meta property="og:description" content="{% if settings and settings.description %}{{ settings.description|striptags|truncatechars:200 }}{% else %}Креативное портфолио, услуги и кейсы.{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:image" content="{% if settings and settings.logo %}{{ settings.logo.url }}{% else %}{% static 'img/bg-default.jpg' %}{% endif %}">
+  <meta property="og:image:secure_url" content="{% if settings and settings.logo %}{{ settings.logo.url }}{% else %}{% static 'img/bg-default.jpg' %}{% endif %}">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{% if settings and settings.icon %}{{ settings.icon.url }}{% else %}{% static 'img/favicon-32.png' %}{% endif %}">
+  <meta name="theme-color" content="#0d0d0d">
+
+  <!-- JSON-LD Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "{% if settings %}{{ settings.title }}{% else %}Raya{% endif %}",
+    "url": "{% if request %}{{ request.scheme }}://{{ request.get_host }}{% else %}/{% endif %}",
+    "logo": "{% if settings and settings.logo %}{{ settings.logo.url }}{% else %}{% static 'img/bg-default.jpg' %}{% endif %}",
+    "sameAs": [
+      {% if settings and settings.instagram %}"{{ settings.instagram }}"{% endif %}{% if settings and settings.facebook %}{% if settings and settings.instagram %}, {% endif %}"{{ settings.facebook }}"{% endif %}{% if settings and settings.telegram %}{% if settings and settings.instagram or settings.facebook %}, {% endif %}"{{ settings.telegram }}"{% endif %}{% if settings and settings.whatsapp %}{% if settings and settings.instagram or settings.facebook or settings.telegram %}, {% endif %}"{{ settings.whatsapp }}"{% endif %}
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "{% if settings and settings.phone %}{{ settings.phone }}{% endif %}",
+      "contactType": "customer service"
+    }
+  }
+  </script>
+
+  <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+  <!-- Web fonts and Web Icons -->
+  <link rel="stylesheet" href="{% static './fonts/ionicons/stylesheet.css' %}">
+  <link rel="stylesheet" href="{% static './fonts/font-awesome.min.css' %}">
+
+  <!-- Vendor CSS style -->
+  <link rel="stylesheet" href="{% static './css/page-loader.css' %}">
+  <link rel="stylesheet" href="{% static './css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static './js/swiper/swiper-bundle.css' %}">
+  <link rel="stylesheet" href="{% static './js/vegas/vegas.min.css' %}">
+
+  <!-- Main CSS files -->
+  <link rel="stylesheet" href="{% static './css/main.css' %}">
+
+  <!-- add alt layout here -->
+  <link rel="stylesheet" href="{% static './css/style-default.css' %}">
+
+  <script src="{% static './js/vendor/modernizr-2.7.1.min.js' %}"></script>
+</head>
+
+<body id="menu" class="body-page">
+    {% block content %}
+    {% endblock %}
+<!-- scripts -->
+  <!-- All Javascript plugins goes here -->
+  <script src="{% static './js/bootstrap.min.js' %}"></script>
+
+  <!-- All vendor scripts -->
+  <script src="{% static './js/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static './js/rellax/rellax-custom.js' %}"></script>
+  <script src="{% static './js/axios/axios.min.js' %}"></script>
+
+  <!-- Custom made script -->
+  <script src="{% static './js/scroll-slider.js' %}"></script>
+  <script src="{% static './js/section-scroll.js' %}"></script>
+  <script src="{% static './js/scroll-anim.js' %}"></script>
+
+  <!-- Javascript main files -->
+  <script src="{% static './js/main.js' %}"></script>
+
+  <script src="{% static './js/init-form.js' %}"></script>
+
+</body>
+
+</html>

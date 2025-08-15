@@ -1,0 +1,177 @@
+{% load static %}
+<!-- Page Loader : just comment these lines to remove it -->
+<div class="page-loader" id="page-loader">
+    <div>
+      <div class="icon icon-spin"></div>
+      <p>Загрузка</p>
+    </div>
+  </div>
+  <!-- Begin of navigation bar .navbar-top -->
+  <header class="navbar-top navbar navbar-a navbar-expand-lg ">
+    <nav class="container-fluid px-0">
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="demo.html">
+        <span class="logo">
+          <img class="light-logo" src="{{ settings.icon.url }}" style="width: 100px; height: 100px;" alt="Simpleux Template">
+        </span>
+        <span class="text ms-3">
+          <span class="line strong">{{ settings.title }}</span>
+          <span class="line sub">{{ settings.slogan }}</span>
+        </span>
+      </a>
+
+      <!-- Menu button -->
+      <button class="navbar-toggler order-lg-2" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarMenuCollapse" aria-controls="navbarMenuCollapse" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="icon icon-menu icon-menu-a">
+          <span class="bars">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
+          </span>
+        </span>
+      </button>
+
+      <!-- Navigation menu -->
+      <div class="collapse navbar-collapse order-lg-1" id="navbarMenuCollapse">
+        <div class="navbar-menu-wrapper">
+          <div class="nav-body">
+            <!-- Menu links at top -->
+            <ul class="navbar-nav nav-menu-top">
+              <li class="nav-item">
+                <a class="nav-link active" href="#about">О нас</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarTopDropdown" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Pages
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarTopDropdown">
+                  <li><a class="dropdown-item" href="#home">Главная страница</a></li>
+                  <li><a class="dropdown-item" href="#item">Портфолио</a></li>
+                  <li><a class="dropdown-item" href="#gallery">Галерея</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <!-- <li><a class="dropdown-item" href="demo.html">All pages</a></li> -->
+                </ul>
+              </li>
+            </ul>
+
+            <!-- Fullscreen menu on large devices -->
+            <div class="nav-fullscreen-lg">
+              <ul class="navbar-nav nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="demo.html#home">Главная страница</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="demo.html#gallery">Галерея</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="demo.html#item">Портфолио</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">Контакты</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Call to action buttons -->
+            <ul class="navbar-nav nav-cta">
+              <li class="nav-item">
+                <a class="btn btn-outline btn-white rounded-pill" href="#contact">
+                  <span class="text">Контакты</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Nav footer of small devices -->
+          <div class="nav-footer-md">
+            <nav class="nav-social nav-social-a">
+              <ul>
+                {% if settings.facebook %}
+                <li class="nav-item">
+                  <a class="nav-link btn" href="{{ settings.facebook }}">
+                    <span class="icon">
+                      <i class="ion ion-logo-facebook"></i>
+                    </span>
+                  </a>
+                </li>
+                {% endif %}
+                {% if settings.instagram %}
+                <li class="nav-item">
+                  <a class="nav-link btn" href="{{ settings.instagram }}">
+                    <span class="icon">
+                      <i class="ion ion-logo-instagram"></i>
+                    </span>
+                  </a>
+                </li>
+                {% endif %}
+                {% if settings.telegram %}
+                <li class="nav-item">
+                  <a class="nav-link btn" href="{{ settings.telegram }}">
+                    <span class="icon">
+                      <i class="fa fa-telegram"></i>
+                    </span>
+                  </a>
+                </li>
+                {% endif %}
+                {% if settings.whatsapp %}
+                <li class="nav-item">
+                  <a class="nav-link btn" href="{{ settings.whatsapp }}">
+                    <span class="icon">
+                      <i class="ion ion-logo-whatsapp"></i>
+                    </span>
+                  </a>
+                </li>
+                {% endif %}
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- End of navigation bar .navbar-top -->
+  <!-- Begin of sidebar .nav-sidebar -->
+  <nav class="nav-sidebar d-none d-xl-block">
+    <ul class="nav-wrapper">
+      <li class="nav-item active" data-section-anchor="home">
+        <a href="#home" class="nav-link">
+          <span class="icon">
+            <i class="ion ion-md-home"></i>
+          </span>
+          <span class="text">Главная страница</span>
+        </a>
+      </li>
+      <li class="nav-item" data-section-anchor="services">
+        <a href="#services" class="nav-link">
+          <span class="icon">
+            <i class="ion ion-md-apps"></i>
+          </span>
+          <span class="text">Услуги</span>
+        </a>
+      </li>
+      <li class="nav-item" data-section-anchor="works">
+        <a href="#works" class="nav-link">
+          <span class="icon">
+            <i class="ion ion-md-image"></i>
+          </span>
+          <span class="text">Наши работы</span>
+        </a>
+      </li>
+      <li class="nav-item" data-section-anchor="contact">
+        <a href="#contact" class="nav-link">
+          <span class="icon">
+            <i class="ion ion-md-call"></i>
+          </span>
+          <span class="text">Контакты</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- End of sidebar .nav-sidebar -->
+  <nav class="nav-dot-menu"></nav>

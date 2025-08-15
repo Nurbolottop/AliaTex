@@ -1,0 +1,80 @@
+.review-admin {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.review-admin .field-name {
+    width: 200px;
+    font-weight: 600;
+    color: #333;
+}
+
+.review-admin .field-review_text {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.review-admin .field-is_published {
+    margin-top: 10px;
+}
+
+.review-admin .field-created_at {
+    color: #666;
+    font-style: italic;
+}
+
+.review-admin .form-row {
+    margin-bottom: 15px;
+}
+
+.review-admin .form-row label {
+    font-weight: 500;
+    color: #333;
+}
+
+.review-admin .form-row input,
+.review-admin .form-row textarea {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.review-admin .form-row input:focus,
+.review-admin .form-row textarea:focus {
+    border-color: #000;
+    box-shadow: none;
+    outline: none;
+}
+
+.review-admin .submit-row {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.review-admin .submit-row input {
+    padding: 8px 16px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.review-admin .submit-row input:hover {
+    background: #333;
+}
+
+.review-admin .submit-row input[type="button"] {
+    background: #ccc;
+    color: #333;
+}
+
+.review-admin .submit-row input[type="button"]:hover {
+    background: #ddd;
+}
