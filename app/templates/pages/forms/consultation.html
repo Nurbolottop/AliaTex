@@ -1,0 +1,61 @@
+{% load static %}
+<section id="subscribe" class="section section-a fullscreen-h-lg">
+    <div class="section-title title-anim">
+      <div data-anim-visible='zoom-in'>
+        <h2 class="text">Связаться</h2>
+      </div>
+    </div>
+    <!-- Begin of section body -->
+    <div class="section-body">
+      <!-- content -->
+      <div class="section-content container content-width anim">
+        <div class="row justify-content-between">
+          <div class="col-12 col-lg-6 text-left">
+            <!-- title and description -->
+            <div class="title-desc pe-lg-5" data-anim-visible='fade'>
+              <h2 class="display-3 anim-1 mb-4">Бесплатная консультация</h2>
+              <p class="anim-2">Оставьте свои контакты, и мы свяжемся с вами, чтобы обсудить ваш заказ, предложить варианты тканей и рассчитать стоимость.</p>
+            </div>
+
+          </div>
+
+          <div class="col-12 col-lg-5 text-left">
+            {% if messages %}
+            <div class="mb-3">
+              {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}" role="alert">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+            <form id="form-subscribe" class="form-a form-subscribe" method="post" action="{% url 'contact_request' %}"
+              data-anim-visible='fade'>
+              {% csrf_token %}
+              <div class="mb-3 success-gone">
+                <label for="name-subscribe" class="form-label">Как к вам обращаться ?</label>
+                <input type="text" class="form-control form-control-a" id="name-subscribe" name="name"
+                  placeholder="Иван Иванов" required>
+              </div>
+              <div class="mb-3 success-gone">
+                <label for="email-subscribe" class="form-label">Телефонный номер или почта</label>
+                <input type="text" class="form-control form-control-a" id="email-subscribe" name="contact"
+                  placeholder="+7 700 000 00 00 или name@mail.com" required>
+              </div>
+              <div class="mt-4 success-gone">
+                <a href="#" class="btn btn-solid btn-white rounded-pill" onclick="document.getElementById('form-subscribe').submit(); return false;">
+                  <span class="text">Отправить</span>
+                </a>
+              </div>
+              <div class="info">
+                <p class="success-show">Спасибо! Мы свяжемся с вами в ближайшее время.</p>
+                <p class="error">Упс, произошла ошибка. Попробуйте позже.</p>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- End of section body -->
+  </section>

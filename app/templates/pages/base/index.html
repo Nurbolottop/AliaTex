@@ -78,183 +78,31 @@
           </div>
         </div>
 
-       {% include 'pages/base/service.html' %}
+       {% include 'pages/base/base/service.html' %}
       </div>
       <!-- End of section body -->
 
       <!-- End of projects section -->
     </section>
     <!-- Begin of about section -->
-    {% include 'pages/base/about.html' %}
+    {% include 'pages/base/base/about.html' %}
     <!-- End of about section -->
     
     <!-- End of services section -->
     <!-- Begin of team section -->
-    <section id="team" class="section section-a fullscreen-h-lg">
-
-      <div class="section-title title-anim">
-        <div data-anim-visible='zoom-in'>
-          <h2 class="text">team</h2>
-        </div>
-      </div>
-      <!-- Begin of section body -->
-      <div class="section-body">
-        <!-- content -->
-        <div class="section-content container content-width anim">
-
-          <div class="row">
-            <div class="col col-12 col-lg-12">
-              <!-- item list -->
-              <div class="item-list row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 anim-list">
-
-                <div class="col">
-                  <!-- an item -->
-                  <div class="item item-image-a " data-anim-visible='fade'>
-                    <a class="img  rounded-pill" href="item-2.html#or_user_page">
-                      <img class="fit" src="{% static 'img/items/img-person4.jpg' %}" alt="team member">
-                    </a>
-                    <div class="item-body mt-4">
-
-                      <a class="page-link" href="item-2.html#or_user_page">
-                        <h4>Peter Laplace</h4>
-                        <p>Designer / CEO</p>
-                      </a>
-                      <nav class="nav-social nav-social-a">
-                        <ul>
-                          <li class="nav-item">
-                            <a class="nav-link btn" href="#">
-                              <span class="icon">
-                                <i class="ion ion-logo-instagram"></i>
-                              </span>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link btn" href="#">
-                              <span class="icon">
-                                <i class="ion ion-logo-twitter"></i>
-                              </span>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link btn" href="#">
-                              <span class="icon">
-                                <i class="ion ion-logo-linkedin"></i>
-                              </span>
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <!-- an item -->
-                  <div class="item item-image-a " data-anim-visible='fade'>
-                    <a class="img  rounded-pill" href="item-2.html#or_user_page">
-                      <img class="fit" src="{% static 'img/items/img-person2.jpg' %}" alt="team member">
-                    </a>
-                    <div class="item-body mt-4">
-
-                      <a class="page-link" href="item-2.html#or_user_page">
-                        <h4>Jane Geraldine</h4>
-                        <p>Journalist / Author</p>
-                      </a>
-                      <nav class="nav-social nav-social-a">
-                        <ul>
-                          <li class="nav-item">
-                            <a class="nav-link btn" href="#">
-                              <span class="icon">
-                                <i class="ion ion-logo-instagram"></i>
-                              </span>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link btn" href="#">
-                              <span class="icon">
-                                <i class="ion ion-logo-twitter"></i>
-                              </span>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link btn" href="#">
-                              <span class="icon">
-                                <i class="ion ion-logo-linkedin"></i>
-                              </span>
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col">
-                  <!-- an item -->
-                  <div class="item item-image-a " data-anim-visible='fade'>
-                    <a class="img  rounded-pill" href="item-2.html#or_user_page">
-                      <img class="fit" src="{% static 'img/items/img-person3.jpg' %}" alt="team member">
-                    </a>
-                    <div class="item-body mt-4">
-
-                      <a class="page-link" href="item-2.html#or_user_page">
-                        <h4>Miley Timson</h4>
-                        <p>Analyst / Finance</p>
-                      </a>
-                      <nav class="nav-social nav-social-a">
-                        <ul>
-                          <li class="nav-item">
-                            <a class="nav-link btn" href="#">
-                              <span class="icon">
-                                <i class="ion ion-logo-instagram"></i>
-                              </span>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link btn" href="#">
-                              <span class="icon">
-                                <i class="ion ion-logo-twitter"></i>
-                              </span>
-                            </a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link btn" href="#">
-                              <span class="icon">
-                                <i class="ion ion-logo-linkedin"></i>
-                              </span>
-                            </a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <!-- end of service list -->
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End of section body -->
-
-    </section>
+    {% include 'pages/base/secondary/partners.html' %}
     <!-- End of team section -->
 
     <!-- Begin of works section -->
-    <section id="works" class="section section-a fullscreen-h-lg">
+    <!-- <section id="works" class="section section-a fullscreen-h-lg">
 
       <div class="section-title title-anim sticky-title-off">
-        <h2 class="text rellax" data-rellax-speed="5" data-rellax-percentage="0.5">projects - works</h2>
+        <h2 class="text rellax" data-rellax-speed="5" data-rellax-percentage="0.5">Наши работы </h2>
       </div>
-      <!-- Begin of section body -->
       <div class="section-body">
-        <!-- content -->
         <div class="section-content container content-width anim">
           <div class="row mb-4">
             <div class="col-12 col-lg-8 text-left">
-              <!-- title and description -->
               <div class="title-desc" data-anim-visible='fade'>
                 <h2 class="display-3 anim-1 mb-4">Works</h2>
                 <p class="anim-2">We did so many projects since the beginning of our path. Here are some of the
@@ -268,13 +116,11 @@
             </div>
           </div>
 
-          <!-- item-list -->
           <div class="part-wrapper">
             <div class="item-list row row-cols-1 row-cols-md-2 g-5 anim-list">
               <div class="col">
                 <div class="row row-cols-1 g-5">
                   <div class="col">
-                    <!-- card -->
                     <a class="item item-image-b col-12 col-lg-9" href="item.html#or_an_url" data-anim-visible='fade'>
                       <div class="item-img rounded-md">
                         <img class="fit" src="{% static 'img/items/img-portrait1.jpg' %}" alt="team member">
@@ -286,10 +132,8 @@
                         </div>
                       </div>
                     </a>
-                    <!-- end of card -->
                   </div>
                   <div class="col">
-                    <!-- card -->
                     <a class="item item-image-b" href="item.html#or_an_url" data-anim-visible='fade'>
                       <div class="item-img rounded-md">
                         <img class="fit" src="{% static 'img/items/img-sample1.jpg' %}" alt="team member">
@@ -301,7 +145,6 @@
                         </div>
                       </div>
                     </a>
-                    <!-- end of card -->
                   </div>
                 </div>
               </div>
@@ -309,7 +152,6 @@
               <div class="col">
                 <div class="row row-cols-1 g-5">
                   <div class="col">
-                    <!-- card -->
                     <a class="item item-image-b" href="item.html#or_an_url" data-anim-visible='fade'>
                       <div class="item-img rounded-md">
                         <img class="fit" src="{% static 'img/items/img-sample4.jpg' %}" alt="team member">
@@ -321,10 +163,8 @@
                         </div>
                       </div>
                     </a>
-                    <!-- end of card -->
                   </div>
                   <div class="col d-flex justify-content-end">
-                    <!-- card -->
                     <a class="item item-image-b col-12 col-lg-9 text-right" href="item.html#or_an_url"
                       data-anim-visible='fade'>
                       <div class="item-img rounded-md">
@@ -337,331 +177,50 @@
                         </div>
                       </div>
                     </a>
-                    <!-- end of card -->
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
-          <!-- end of item-list -->
         </div>
       </div>
-      <!-- End of section body -->
+    </section> -->
 
-    </section>
-    <!-- End of works section -->
-    <!-- Begin of text section -->
-    <section id="work-item" class="section section-a fullscreen-h-lg">
-      <div class="section-title sticky-title-off">
+    
+    {% include 'pages/base/secondary/service2.html' %}
+    <!-- Begin of subscribe section -->
+    {% include 'pages/forms/consultation.html' %}
+    <!-- Begin of reviews section -->
+    <section id="reviews" class="section section-a fullscreen-h-lg">
+      <div class="section-title title-anim">
         <div data-anim-visible='zoom-in'>
-          <h2 class="text">design</h2>
+          <h2 class="text">Отзывы</h2>
         </div>
       </div>
       <!-- Begin of section body -->
       <div class="section-body">
-        <!-- content -->
-        <div class="section-content container content-width anim">
-          <div class="part-wrapper">
-            <div class="row g-5">
-              <div class="col-12 col-lg-6">
-                <!-- card -->
-                <div class="item item-image-c rounded-md" data-anim-visible='fade'>
-                  <div class="item-img">
-                    <img class="fit" src="{% static 'img/items/img-square-1.jpg' %}" alt="team member">
-                  </div>
-                  <div class="item-header">
-                    <div class="desc">
-                      <h4 class="display-4">Alfa Dezein</h4>
-                      <p>Art, Showcase</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- end of card -->
-              </div>
-              <div class="col-12 col-lg-6 d-flex align-items-center">
-                <div class="title-desc pe-lg-5 ps-lg-5" data-anim-visible='fade'>
-                  <p>This thing was made from the finest technology and materials available on earth. It is so
-                    special that it is unique in every aspect.</p>
-
-                  <a class="mt-3 btn btn-outline btn-white rounded-pill" href="#about">
-                    <span class="text">Learn more</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End of section body -->
-
-    </section>
-    <!-- End of text section -->
-    <!-- Begin of products section -->
-    <section id="products" class="section section-a fullscreen-h-lg">
-
-      <div class="section-title title-anim sticky-title-off">
-        <h2 class="text rellax" data-rellax-speed="5" data-rellax-percentage="0.5">products</h2>
-      </div>
-      <!-- Begin of section body -->
-      <div class="section-body">
-        <!-- content -->
         <div class="section-content container content-width anim">
           <div class="row mb-4">
             <div class="col-12 col-lg-8 text-left">
               <!-- title and description -->
               <div class="title-desc" data-anim-visible='fade'>
-                <h2 class="display-3 anim-1 mb-4">Products</h2>
-                <p class="anim-2">We made so many products since the beginning of our path. Here are some of the
-                  remarkable ones.</p>
               </div>
             </div>
             <div class="col-lg-4 text-right" data-anim-visible='fade'>
-              <a class="btn btn-outline btn-white rounded-pill" href="#about">
-                <span class="text">All products</span>
+              <a class="btn btn-outline btn-white rounded-pill" href="{% url 'reviews' %}">
+                <span class="text">Оставить отзыв</span>
               </a>
             </div>
           </div>
-
-          <!-- item-list -->
-          <div class="part-wrapper">
-            <div class="item-list row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 anim-list">
-              <div class="col">
-                <!-- card -->
-                <a class="item item-image-b" href="item.html#or_an_url" data-anim-visible='fade'>
-                  <div class="item-img rounded-md">
-                    <img class="fit" src="{% static 'img/items/img-square-2.jpg' %}" alt="team member">
-                  </div>
-                  <div class="item-body">
-                    <div class="desc">
-                      <div class="row">
-                        <div class="col-auto">
-                          <h4>Lampon-du</h4>
-                        </div>
-                        <div class="col">
-                          <hr class="hr-a">
-                        </div>
-                        <div class="col-auto">
-                          <span class="price">$79</span>
-                        </div>
-                      </div>
-                      <p class="category">Lighting</p>
-                    </div>
-                  </div>
-                </a>
-                <!-- end of card -->
-              </div>
-
-              <div class="col">
-                <!-- card -->
-                <a class="item item-image-b" href="item.html#or_an_url" data-anim-visible='fade'>
-                  <div class="item-img rounded-md">
-                    <img class="fit" src="{% static 'img/items/img-square-3.jpg' %}" alt="team member">
-                  </div>
-                  <div class="item-body">
-                    <div class="desc">
-                      <div class="row">
-                        <div class="col-auto">
-                          <h4>Neutraco oil</h4>
-                        </div>
-                        <div class="col">
-                          <hr class="hr-a">
-                        </div>
-                        <div class="col-auto">
-                          <span class="price">$49</span>
-                        </div>
-                      </div>
-                      <p class="category">Beauty</p>
-                    </div>
-                  </div>
-                </a>
-                <!-- end of card -->
-              </div>
-
-              <div class="col">
-                <!-- card -->
-                <a class="item item-image-b" href="item.html#or_an_url" data-anim-visible='fade'>
-                  <div class="item-img rounded-md">
-                    <img class="fit" src="{% static 'img/items/img-square-4.jpg' %}" alt="team member">
-                  </div>
-                  <div class="item-body">
-                    <div class="desc">
-                      <div class="row">
-                        <div class="col-auto">
-                          <h4>Desin structor</h4>
-                        </div>
-                        <div class="col">
-                          <hr class="hr-a">
-                        </div>
-                        <div class="col-auto">
-                          <span class="price">$29</span>
-                        </div>
-                      </div>
-                      <p class="category">Book</p>
-                    </div>
-                  </div>
-                </a>
-                <!-- end of card -->
-              </div>
-
-              <div class="col">
-                <!-- card -->
-                <a class="item item-image-b" href="item.html#or_an_url" data-anim-visible='fade'>
-                  <div class="item-img rounded-md">
-                    <img class="fit" src="{% static 'img/items/img-square-5.jpg' %}" alt="team member">
-                  </div>
-                  <div class="item-body">
-                    <div class="desc">
-                      <div class="row">
-                        <div class="col-auto">
-                          <h4>Northy Dress</h4>
-                        </div>
-                        <div class="col">
-                          <hr class="hr-a">
-                        </div>
-                        <div class="col-auto">
-                          <span class="price">$39</span>
-                        </div>
-                      </div>
-                      <p class="category">Clothing</p>
-                    </div>
-                  </div>
-                </a>
-                <!-- end of card -->
-              </div>
-
-              <div class="col">
-                <!-- card -->
-                <a class="item item-image-b" href="item.html#or_an_url" data-anim-visible='fade'>
-                  <div class="item-img rounded-md">
-                    <img class="fit" src="{% static 'img/items/img-square-6.jpg' %}" alt="team member">
-                  </div>
-                  <div class="item-body">
-                    <div class="desc">
-                      <div class="row">
-                        <div class="col-auto">
-                          <h4>Leather Neki</h4>
-                        </div>
-                        <div class="col">
-                          <hr class="hr-a">
-                        </div>
-                        <div class="col-auto">
-                          <span class="price">$79</span>
-                        </div>
-                      </div>
-                      <p class="category">Shoes</p>
-                    </div>
-                  </div>
-                </a>
-                <!-- end of card -->
-              </div>
-
-              <div class="col">
-                <!-- card -->
-                <a class="item item-image-b" href="item.html#or_an_url" data-anim-visible='fade'>
-                  <div class="item-img rounded-md">
-                    <img class="fit" src="{% static 'img/items/img-square-7.jpg' %}" alt="team member">
-                  </div>
-                  <div class="item-body">
-                    <div class="desc">
-                      <div class="row">
-                        <div class="col-auto">
-                          <h4>To Shirtix</h4>
-                        </div>
-                        <div class="col">
-                          <hr class="hr-a">
-                        </div>
-                        <div class="col-auto">
-                          <span class="price">$29</span>
-                        </div>
-                      </div>
-                      <p class="category">Clothing</p>
-                    </div>
-                  </div>
-                </a>
-                <!-- end of card -->
-              </div>
-
-            </div>
-          </div>
-          <!-- end of item-list -->
-        </div>
-      </div>
-      <!-- End of section body -->
-
-    </section>
-    <!-- End of products section -->
-    <!-- Begin of subscribe section -->
-    <section id="subscribe" class="section section-a fullscreen-h-lg">
-      <div class="section-title title-anim">
-        <div data-anim-visible='zoom-in'>
-          <h2 class="text">newsletter</h2>
-        </div>
-      </div>
-      <!-- Begin of section body -->
-      <div class="section-body">
+  
         <!-- content -->
         <div class="section-content container content-width anim">
           <div class="row justify-content-between">
             <div class="col-12 col-lg-6 text-left">
               <!-- title and description -->
               <div class="title-desc pe-lg-5" data-anim-visible='fade'>
-                <h2 class="display-3 anim-1 mb-4">Subscribe</h2>
-                <p class="anim-2">Don't miss any new opportunity, Hurry up! register now and get early access
-                  for all future updates.</p>
-              </div>
-
-            </div>
-
-            <div class="col-12 col-lg-5 text-left">
-              <form id="form-subscribe" class="form-a form-subscribe" method="post" action="{% static 'ajaxserver/serverfile.php' %}"
-                data-anim-visible='fade'>
-                <div class="mb-3 success-gone">
-                  <label for="name-subscribe" class="form-label">Name</label>
-                  <input type="text" class="form-control form-control-a" id="name-subscribe"
-                    placeholder="Firstname Lastname" required>
-                </div>
-                <div class="mb-3 success-gone">
-                  <label for="email-subscribe" class="form-label">Email</label>
-                  <input type="email" class="form-control form-control-a" id="email-subscribe"
-                    placeholder="your@email.com" required>
-                </div>
-                <div class="mt-4 success-gone">
-                  <button type="submit" class="btn btn-solid btn-white rounded-pill">
-                    <span class="text">Subscribe</span>
-                  </button>
-                </div>
-                <div class="info">
-                  <p class="success-show">Thank you for your subscription.</p>
-                  <p class="error">Oops, an error happened.</p>
-                </div>
-              </form>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <!-- End of section body -->
-    </section>
-    <!-- End of subscribe section -->
-    <!-- Begin of reviews section -->
-    <section id="reviews" class="section section-a fullscreen-h-lg">
-      <div class="section-title title-anim">
-        <div data-anim-visible='zoom-in'>
-          <h2 class="text">reviews</h2>
-        </div>
-      </div>
-      <!-- Begin of section body -->
-      <div class="section-body">
-        <!-- content -->
-        <div class="section-content container content-width anim">
-          <div class="row justify-content-between">
-            <div class="col-12 col-lg-6 text-left">
-              <!-- title and description -->
-              <div class="title-desc pe-lg-5" data-anim-visible='fade'>
-                <h2 class="display-3 anim-1 mb-4">Feedback</h2>
-                <p class="anim-2">Here are some user feedback about our services and how they help them achieve
-                  their goals.</p>
+                <h2 class="display-3 anim-1 mb-4">Отзывы клиентов</h2>
+                <p class="anim-2">Наши клиенты делятся своим опытом сотрудничества с нами. Мы ценим каждое мнение и гордимся тем, что наша работа помогает воплощать их идеи в жизнь.</p>
               </div>
 
             </div>
@@ -672,71 +231,50 @@
                 <!-- Swiper wrapper -->
                 <div class="swiper-wrapper">
                   <!-- Slides -->
+                  {% for r in reviews %}
                   <div class="swiper-slide">
                     <div class="item-slider item-quote-a">
                       <div class="item-body">
                         <blockquote class="quote">
                           <span class="quote-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="37.002" height="33.114"
-                              viewBox="0 0 37.002 33.114">
-                              <path data-name="Path 4"
-                                d="M34.409,0V4.56a7.322,7.322,0,0,0-3.211,4.3,25.306,25.306,0,0,0-1.028,8.093v1.413H35.95V32.114H22.462V21.838A30.83,30.83,0,0,1,25.481,7.065,13.635,13.635,0,0,1,34.473,0ZM11.929,0V4.56a7.322,7.322,0,0,0-3.211,4.3A25.306,25.306,0,0,0,7.69,16.956v1.413H13.47V32.114H-.018V21.838A30.83,30.83,0,0,1,3,7.065,13.635,13.635,0,0,1,11.993,0Z"
-                                transform="translate(0.551 0.5)" fill="rgba(255,255,255,0.07)" stroke="#fff"
-                                stroke-width="1" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="37.002" height="33.114" viewBox="0 0 37.002 33.114">
+                              <path data-name="Path 4" d="M34.409,0V4.56a7.322,7.322,0,0,0-3.211,4.3,25.306,25.306,0,0,0-1.028,8.093v1.413H35.95V32.114H22.462V21.838A30.83,30.83,0,0,1,25.481,7.065,13.635,13.635,0,0,1,34.473,0ZM11.929,0V4.56a7.322,7.322,0,0,0-3.211,4.3A25.306,25.306,0,0,0,7.69,16.956v1.413H13.47V32.114H-.018V21.838A30.83,30.83,0,0,1,3,7.065,13.635,13.635,0,0,1,11.993,0Z" transform="translate(0.551 0.5)" fill="rgba(255,255,255,0.07)" stroke="#fff" stroke-width="1" />
                             </svg>
                           </span>
                           <span>
-                            We can tell our relatives that we did the best choice when choosing it. One word: amazing !
+                            {{ r.review_text }}
                           </span>
                         </blockquote>
                       </div>
                       <div class="item-header">
                         <div class="row">
-                          <div class="col-auto">
-                            <img class="icon-img-lg rounded-pill" src="{% static 'img/items/img-avatar-1.jpg' %}" loading="lazy"
-                              alt="Item">
-                          </div>
                           <div class="col">
-                            <h5 class="mb-1 mt-2">J. Morgan</h5>
-                            <p>Journalist</p>
+                            <h5 class="mb-1 mt-2">{{ r.name }}</h5>
+                            <p>{{ r.created_at|date:'d.m.Y' }}</p>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                  {% empty %}
                   <div class="swiper-slide">
                     <div class="item-slider item-quote-a">
                       <div class="item-body">
                         <blockquote class="quote">
                           <span class="quote-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="37.002" height="33.114"
-                              viewBox="0 0 37.002 33.114">
-                              <path data-name="Path 4"
-                                d="M34.409,0V4.56a7.322,7.322,0,0,0-3.211,4.3,25.306,25.306,0,0,0-1.028,8.093v1.413H35.95V32.114H22.462V21.838A30.83,30.83,0,0,1,25.481,7.065,13.635,13.635,0,0,1,34.473,0ZM11.929,0V4.56a7.322,7.322,0,0,0-3.211,4.3A25.306,25.306,0,0,0,7.69,16.956v1.413H13.47V32.114H-.018V21.838A30.83,30.83,0,0,1,3,7.065,13.635,13.635,0,0,1,11.993,0Z"
-                                transform="translate(0.551 0.5)" fill="rgba(255,255,255,0.07)" stroke="#fff"
-                                stroke-width="1" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="37.002" height="33.114" viewBox="0 0 37.002 33.114">
+                              <path data-name="Path 4" d="M34.409,0V4.56a7.322,7.322,0,0,0-3.211,4.3,25.306,25.306,0,0,0-1.028,8.093v1.413H35.95V32.114H22.462V21.838A30.83,30.83,0,0,1,25.481,7.065,13.635,13.635,0,0,1,34.473,0ZM11.929,0V4.56a7.322,7.322,0,0,0-3.211,4.3A25.306,25.306,0,0,0,7.69,16.956v1.413H13.47V32.114H-.018V21.838A30.83,30.83,0,0,1,3,7.065,13.635,13.635,0,0,1,11.993,0Z" transform="translate(0.551 0.5)" fill="rgba(255,255,255,0.07)" stroke="#fff" stroke-width="1" />
                             </svg>
                           </span>
                           <span>
-                            This product is something that we really trusted since the first
-                            time we had it. You will not regret it.
+                            Пока отзывов нет.
                           </span>
                         </blockquote>
                       </div>
-                      <div class="item-header">
-                        <div class="row">
-                          <div class="col-auto">
-                            <img class="icon-img-lg rounded-pill" src="{% static 'img/items/img-avatar-2.jpg' %}" loading="lazy"
-                              alt="Item">
-                          </div>
-                          <div class="col">
-                            <h5 class="mb-1 mt-2">E. Helen</h5>
-                            <p>Designer</p>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </div>
+                  {% endfor %}
+                 
                 </div>
 
                 <!-- slider pagination -->
@@ -752,7 +290,7 @@
     </section>
     <!-- End of reviews section -->
     <!-- Begin of home contact -->
-    {% include 'pages/base/contacts.html' %}
+    {% include 'pages/forms/contacts.html' %}
     <!-- End of contact section -->
   </main>
   <!-- END OF page main content -->

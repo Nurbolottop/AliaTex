@@ -116,33 +116,3 @@ class NumbersAdmin(admin.ModelAdmin):
             js = ('js/icon_preview.js',)
         form.Media = Media
         return form
-
-@admin.register(index_models.Reviews_Image)
-class ReviewsImageAdmin(admin.ModelAdmin):
-    list_display = ('preview_image',)
-    readonly_fields = ('preview_image',)
-    
-    def preview_image(self, obj):
-        if obj.image:
-            return format_html(
-                '<img src="{}" style="max-height: 100px; border-radius: 5px; margin: 10px;"/>', 
-                obj.image.url
-            )
-        return 'Нет изображения'
-    
-    preview_image.short_description = 'Фото'
-
-    def has_add_permission(self, request):
-        # Проверяем количество существующих записей
-        if index_models.Reviews_Image.objects.count() >= 4:
-            return False
-        return True
-
-    def get_queryset(self, request):
-        # Сортируем записи по дате создания в обратном порядке
-        return super().get_queryset(request).order_by('-id')
-
-    class Media:
-        css = {
-            'all': ('admin/css/custom.css',)
-        }

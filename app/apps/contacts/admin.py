@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Review
+from .models import Review, ContactRequest
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
@@ -33,3 +33,22 @@ class ReviewAdmin(admin.ModelAdmin):
         css = {
             'all': ('admin/css/custom.css',)
         }
+
+@admin.register(ContactRequest)
+class ContactRequestAdmin(admin.ModelAdmin):
+    list_display = ('name', 'contact', 'created_at', 'is_processed')
+    list_filter = ('is_processed', 'created_at')
+    search_fields = ('name', 'contact')
+    ordering = ('-created_at',)
+    list_per_page = 20
+
+    fieldsets = (
+        ('Основная информация', {
+            'fields': ('name', 'contact', 'is_processed')
+        }),
+        ('Служебные', {
+            'fields': ('created_at',)
+        }),
+    )
+
+    readonly_fields = ('created_at',)

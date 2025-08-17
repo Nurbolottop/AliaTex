@@ -1,0 +1,60 @@
+{% load static %}
+<section id="products" class="section section-a fullscreen-h-lg">
+
+    <div class="section-title title-anim sticky-title-off">
+      <h2 class="text rellax" data-rellax-speed="5" data-rellax-percentage="0.5">Наши изделия</h2>
+    </div>
+    <!-- Begin of section body -->
+    <div class="section-body">
+      <!-- content -->
+      <div class="section-content container content-width anim">
+        <div class="row mb-4">
+          <div class="col-12 col-lg-8 text-left">
+            <!-- title and description -->
+            <div class="title-desc" data-anim-visible='fade'>
+              <h2 class="display-3 anim-1 mb-4">Наши изделия</h2>
+              <p class="anim-2">Шьём качественную одежду от базовых моделей до эксклюзива, с вниманием к каждой детали.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 text-right" data-anim-visible='fade'>
+            <a class="btn btn-outline btn-white rounded-pill" href="#about">
+              <span class="text">Все изделия</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- item-list -->
+        <div class="part-wrapper">
+          <div class="item-list row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 anim-list">
+            
+            {% for item in items %}
+            <div class="col">
+              <!-- card -->
+              <a class="item item-image-b" href="item.html#or_an_url" data-anim-visible='fade'>
+                <div class="item-img rounded-md">
+                  <img class="fit" src="{{ item.image.url }}" alt="team member">
+                </div>
+                <div class="item-body">
+                  <div class="desc">
+                    <div class="row">
+                      <div class="col-auto">
+                        <h4>{{ item.title }}</h4>
+                      </div>
+                      <div class="col">
+                        <hr class="hr-a">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- end of card -->
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <!-- end of item-list -->
+      </div>
+    </div>
+    <!-- End of section body -->
+
+  </section>

@@ -105,25 +105,3 @@ class Numbers(models.Model):
     def __str__(self):
         return self.title
 
-from django_resized import ResizedImageField
-
-class Reviews_Image(models.Model):
-    image = ResizedImageField(
-        size=[300, 300],  # Фиксированный размер 300x300 пикселей
-        quality=85,  # Качество изображения
-        crop=['middle', 'center'],  # Обрезка по центру
-        upload_to='reviews_image/', 
-        verbose_name="Фотография"
-    )
-    
-    class Meta:
-        verbose_name = '4) Фотографии Отзывы'
-        verbose_name_plural = '4) Фотографии Отзывы'
-        
-    def save(self, *args, **kwargs):
-        # Проверяем, что нет более 4 фотографий
-        if self.pk is None and Reviews_Image.objects.count() >= 4:
-            raise ValueError('Максимальное количество фотографий (4) уже достигнуто')
-        super().save(*args, **kwargs)
-    
- 

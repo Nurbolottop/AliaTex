@@ -1,0 +1,37 @@
+{% load static %}
+<section id="team" class="section section-a fullscreen-h-lg">
+
+    <div class="section-title title-anim">
+      <div data-anim-visible='zoom-in'>
+        <h2 class="text">Наши партнеры</h2>
+      </div>
+    </div>
+    <!-- Begin of section body -->
+    <div class="section-body">
+      <!-- content -->
+      <div class="section-content container content-width anim">
+
+        <div class="row">
+          <div class="col col-12 col-lg-12">
+            <!-- item list -->
+            <div class="item-list row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 anim-list">
+                {% for partner in partners %}
+              <div class="col">
+                <!-- an item -->
+                <div class="item item-image-a " data-anim-visible='fade'>
+                  <a class="img  rounded-pill" href="{{ partner.url }}">
+                    <img class="fit" src="{{ partner.image.url }}" alt="team member">
+                  </a>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <!-- end of service list -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of section body -->
+
+  </section>

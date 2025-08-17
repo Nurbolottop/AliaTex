@@ -87,25 +87,20 @@ class Service(models.Model):
     def __str__(self):
         return self.title
 
-class Slide(models.Model):
+class OurService(models.Model):
     image = ResizedImageField(
         force_format="WEBP", 
         quality=100, 
-        upload_to='sliders/',
-        verbose_name="Фото"
+        upload_to='service/', 
+        verbose_name="Фотография"
     )
     title = models.CharField(
         max_length = 100,
-        verbose_name='Заголовок'
+        verbose_name='Название услуги'
     )
-    subtitle = models.CharField(
-        max_length = 100,
-        verbose_name='Подзаголовок'
-    )
-
     class Meta:
-        verbose_name = 'Слайд'
-        verbose_name_plural = 'Слайды'
+        verbose_name = '3) Мы шьем'
+        verbose_name_plural = '3) Мы шьем'
     def __str__(self):
         return self.title
 
@@ -120,5 +115,5 @@ class Partners(models.Model):
         verbose_name='Ссылка'
     )
     class Meta:
-        verbose_name = '3) Партнеры'
-        verbose_name_plural = '3) Партнеры'
+        verbose_name = '4) Партнеры'
+        verbose_name_plural = '4) Партнеры'
