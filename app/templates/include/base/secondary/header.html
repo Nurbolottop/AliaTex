@@ -22,7 +22,7 @@
             <!-- Menu links at top -->
             <ul class="navbar-nav nav-menu-top">
               <li class="nav-item">
-                <a class="nav-link active" href="#about">Наши услуги</a>
+                <a class="nav-link active" href="{% url 'index' %}#projects">Наши услуги</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarTopDropdown" role="button"
@@ -30,13 +30,13 @@
                   Разделы
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarTopDropdown">
-                  <li><a class="dropdown-item" href="#home">Главная</a></li>
-                  <li><a class="dropdown-item" href="#projects">Наши услуги</a></li>
-                  <li><a class="dropdown-item" href="#about">О нас</a></li>
-                  <li><a class="dropdown-item" href="#works">Наши работы</a></li>
-                  <li><a class="dropdown-item" href="#reviews">Отзывы</a></li>
-                  <li><a class="dropdown-item" href="#subscribe">Бесплатная консультация</a></li>
-                  <li><a class="dropdown-item" href="#contact">Контакты</a></li>
+                  <li><a class="dropdown-item" href="{% url 'index' %}#home">Главная</a></li>
+                  <li><a class="dropdown-item" href="{% url 'index' %}#projects">Наши услуги</a></li>
+                  <li><a class="dropdown-item" href="{% url 'index' %}#about">О нас</a></li>
+                  <li><a class="dropdown-item" href="{% url 'index' %}#works">Наши работы</a></li>
+                  <li><a class="dropdown-item" href="{% url 'index' %}#reviews">Отзывы</a></li>
+                  <li><a class="dropdown-item" href="{% url 'index' %}#subscribe">Бесплатная консультация</a></li>
+                  <li><a class="dropdown-item" href="{% url 'index' %}#contact">Контакты</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="{% url 'reviews' %}">Оставить отзыв (страница)</a></li>
                 </ul>
@@ -46,7 +46,7 @@
             <!-- Call to action buttons -->
             <ul class="navbar-nav nav-cta">
               <li class="nav-item">
-                <a class="btn btn-outline btn-white rounded-pill" href="#contact">
+                <a class="btn btn-outline btn-white rounded-pill" href="{% url 'index' %}#contact">
                   <span class="text">Контакты</span>
                 </a>
               </li>

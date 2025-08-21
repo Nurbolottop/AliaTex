@@ -19,6 +19,6 @@ def reviews(request):
     settings = cms_models.Settings.objects.first()
     return render(request,'pages/forms/reviews.html',locals())
 
-def gallery(request): 
-    settings = cms_models.Settings.objects.first()
-    return render(request,'pages/secondary/gallery.html',locals())
+# def gallery(request): 
+#     settings = cms_models.Settings.objects.first()
+#     return render(request,'pages/secondary/gallery.html',locals())

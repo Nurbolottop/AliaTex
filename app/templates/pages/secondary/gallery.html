@@ -27,42 +27,42 @@ http://miradontsoa.com
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Page Title">
   <meta name="twitter:description" content="Description of the page">
-  <meta name="twitter:image" content="/img/bg-default.jpg">
+  <meta name="twitter:image" content="/{% static 'v1/img/bg-default.jpg' %}">
 
   <!-- Facebook Meta -->
   <meta property="og:url" content="your website url here">
   <meta property="og:title" content="Page Title">
   <meta property="og:description" content="Description of the page">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="/img/bg-default.jpg">
-  <meta property="og:image:secure_url" content="/img/bg-default.jpg">
+  <meta property="og:image" content="/{% static 'v1/img/bg-default.jpg' %}">
+  <meta property="og:image:secure_url" content="/{% static 'v1/img/bg-default.jpg' %}">
   <meta property="og:image:type" content="image/jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
   <!-- Web fonts and Web Icons -->
-  <link rel="stylesheet" href="{% static 'fonts/opensans/stylesheet.css' %}">
-  <link rel="stylesheet" href="{% static 'fonts/bebas/stylesheet.css' %}">
-  <link rel="stylesheet" href="{% static 'fonts/ionicons.min.css' %}">
-  <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'v1/fonts/opensans/stylesheet.css' %}">
+  <link rel="stylesheet" href="{% static 'v1/fonts/bebas/stylesheet.css' %}">
+  <link rel="stylesheet" href="{% static 'v1/fonts/ionicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'v1/fonts/font-awesome.min.css' %}">
 
   <!-- Vendor CSS style -->
-  <link rel="stylesheet" href="{% static 'css/pageloader.css' %}">
+  <link rel="stylesheet" href="{% static 'v1/css/pageloader.css' %}">
 
   <!-- Uncomment below to load individualy vendor CSS -->
-  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'js/vendor/swiper.min.css' %}">
-  <link rel="stylesheet" href="{% static 'js/vendor/jquery.fullpage.min.css' %}">
-  <link rel="stylesheet" href="{% static 'js/vegas/vegas.min.css' %}">
+  <link rel="stylesheet" href="{% static 'v1/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'v1/js/vendor/swiper.min.css' %}">
+  <link rel="stylesheet" href="{% static 'v1/js/vendor/jquery.fullpage.min.css' %}">
+  <link rel="stylesheet" href="{% static 'v1/js/vegas/vegas.min.css' %}">
 
   <!-- Main CSS files -->
-  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'v1/css/main.css' %}">
 
   <!-- add alt layout here -->
-  <link rel="stylesheet" href="{% static 'css/style-color2.css' %}">
+  <link rel="stylesheet" href="{% static 'v1/css/style-color2.css' %}">
 
-  <script src="{% static 'js/vendor/modernizr-2.7.1.min.js' %}"></script>
+  <script src="{% static 'v1/js/vendor/modernizr-2.7.1.min.js' %}"></script>
 </head>
 
 <body id="menu" class="body-page">
@@ -97,11 +97,11 @@ http://miradontsoa.com
     <!-- Begin of logo/brand -->
     <a class="navbar-brand" href="./#">
       <span class="logo">
-        <img class="light-logo" src="img/logo.png" alt="Logo">
+        <img class="light-logo" src="{{settings.logo.url}}" alt="Logo">
       </span>
       <span class="text">
-        <span class="line">Simpleux</span>
-        <span class="line sub">Portfolio Template</span>
+        <span class="line">{{settings.title}}</span>
+        <span class="line sub">{{settings.slogan}}</span>
       </span>
     </a>
     <!-- End of logo/brand -->
@@ -184,7 +184,7 @@ http://miradontsoa.com
       <div class="section-wrapper twoside">
         <!-- title -->
         <div class="section-title text-center">
-          <h5 class="title-bg no-anim">Gallery</h5>
+          <h5 class="title-bg no-anim">Галерея  </h5>
         </div>
 
 
@@ -197,7 +197,7 @@ http://miradontsoa.com
               <li class="slide-item swiper-slide">
                 <div class="item-wrapper">
                   <div class="illustr">
-                    <img src="img/items/img-sample2-small.jpg" alt="Image" class="img">
+                    <img src="{% static 'v1/img/items/img-sample2-small.jpg' %}" alt="Image" class="img">
                   </div>
                   <a class="legend" href="item-style2.html#project_url">
                     <h3 class="display-3">Mountain</h3>
@@ -209,7 +209,7 @@ http://miradontsoa.com
               <li class="slide-item swiper-slide">
                 <div class="item-wrapper">
                   <div class="illustr">
-                    <img src="img/items/img-sample3-small.jpg" alt="Image" class="img">
+                    <img src="{% static 'v1/img/items/img-sample3-small.jpg' %}" alt="Image" class="img">
                   </div>
                   <a class="legend" href="item-style2.html#project_url">
                     <h3 class="display-3">Cloud</h3>
@@ -221,7 +221,7 @@ http://miradontsoa.com
               <li class="slide-item swiper-slide">
                 <div class="item-wrapper">
                   <div class="illustr">
-                    <img src="img/items/img-sample4-small.jpg" alt="Image" class="img">
+                    <img src="{% static 'v1/img/items/img-sample4-small.jpg' %}" alt="Image" class="img">
                   </div>
                   <a class="legend" href="item-style2.html#project_url">
                     <h3 class="display-3">Garden</h3>
@@ -233,7 +233,7 @@ http://miradontsoa.com
               <li class="slide-item swiper-slide">
                 <div class="item-wrapper">
                   <div class="illustr">
-                    <img src="img/items/img-sample5-small.jpg" alt="Image" class="img">
+                    <img src="{% static 'v1/img/items/img-sample5-small.jpg' %}" alt="Image" class="img">
                   </div>
                   <a class="legend" href="item-style2.html#project_url">
                     <h3 class="display-3">Sky</h3>
@@ -275,36 +275,41 @@ http://miradontsoa.com
   <footer id="site-footer" class="page-footer">
     <!-- Left content -->
     <div class="footer-left">
-      <p>PORTFOLIO BY
-        <a href="http://highhay.com">
-          <span class="marked">BRAND</span>
-        </a>
-      </p>
+      <p class="note text-sm">&copy; 2025 <a href="https://t.me/erk1nbaew"><span class="marked">ZEA </span></a>
+
     </div>
 
     <!-- Right content -->
     <div class="footer-right">
       <ul class="social">
+        {% if settings.facebook %}
         <li>
-          <a href="">
+          <a href="{{ settings.facebook }}">
             <i class="icon fa fa-facebook"></i>
           </a>
         </li>
+        {% endif %}
+        {% if settings.instagram %}
         <li>
-          <a href="">
-            <i class="icon fa fa-twitter"></i>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i class="icon fa fa-linkedin"></i>
-          </a>
-        </li>
-        <li>
-          <a href="">
+          <a href="{{ settings.instagram }}">
             <i class="icon fa fa-instagram"></i>
           </a>
         </li>
+        {% endif %}
+        {% if settings.telegram %}
+        <li>
+          <a href="{{ settings.telegram }}">
+            <i class="icon fa fa-telegram"></i>
+          </a>
+        </li>
+        {% endif %}
+        {% if settings.whatsapp %}
+        <li>
+          <a href="{{ settings.whatsapp }}">
+            <i class="icon fa fa-whatsapp"></i>
+          </a>
+        </li>
+        {% endif %}
       </ul>
     </div>
   </footer>
@@ -312,21 +317,21 @@ http://miradontsoa.com
 
   <!-- scripts -->
   <!-- All Javascript plugins goes here -->
-  <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+  <script src="{% static 'v1/js/vendor/jquery-1.12.4.min.js' %}"></script>
 
   <!-- All vendor scripts -->
-  <script src="{% static 'js/vendor/scrolloverflow.min.js' %}"></script>
-  <script src="{% static 'js/vendor/all.js' %}"></script>
-  <script src="{% static 'js/particlejs/particles.min.js' %}"></script>
+  <script src="{% static 'v1/js/vendor/scrolloverflow.min.js' %}"></script>
+  <script src="{% static 'v1/js/vendor/all.js' %}"></script>
+  <script src="{% static 'v1/js/particlejs/particles.min.js' %}"></script>
 
   <!-- Countdown script -->
-  <script src="{% static 'js/jquery.downCount.js' %}"></script>
+  <script src="{% static 'v1/js/jquery.downCount.js' %}"></script>
 
   <!-- Form script -->
-  <script src="{% static 'js/form_script.js' %}"></script>
+  <script src="{% static 'v1/js/form_script.js' %}"></script>
 
   <!-- Javascript main files -->
-  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'v1/js/main.js' %}"></script>
 
 
 </body>
