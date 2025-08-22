@@ -8,8 +8,6 @@ import time
 import os
 from telebot import TeleBot, types
 from django.conf import settings as django_settings
-from apps.contacts import models as contacts_models
-from apps.contacts.models import Testimonial
 
 logger = logging.getLogger(__name__)
 
@@ -30,6 +28,44 @@ def start(message: types.Message) -> None:
         message.chat.id,
         "👋 Привет! Это официальный бот проекта. Пишите /start, чтобы начать!",
     )
+
+
+def _safe_send_message(text: str) -> None:
+    """Send a message to configured chat/thread, safely logging errors.
+
+    Requires env vars: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID (and optional TELEGRAM_REVIEWS_THREAD_ID).
+    If not configured, the function will log a warning and return silently.
+    """
+    if not TELEGRAM_TOKEN or not REVIEWS_CHAT_ID:
+        logger.warning("Telegram is not configured (missing token or chat id). Message not sent.")
+        return
+    try:
+        kwargs = {}
+        if REVIEWS_THREAD_ID:
+            kwargs["message_thread_id"] = REVIEWS_THREAD_ID
+        bot.send_message(REVIEWS_CHAT_ID, text, **kwargs)
+    except Exception as exc:  # pylint: disable=broad-except
+        logger.error("Failed to send Telegram message: %s", exc)
+
+
+def send_contact_request_notification(name: str, contact: str) -> None:
+    """Notify about a new contact request from the site."""
+    text = (
+        "📩 Новая заявка на консультацию\n"
+        f"Имя: {name}\n"
+        f"Контакт: {contact}"
+    )
+    _safe_send_message(text)
+
+
+def send_review_notification(name: str, review_text: str) -> None:
+    """Notify about a new review submitted on the site."""
+    text = (
+        "📝 Новый отзыв\n"
+        f"Имя: {name}\n"
+        f"Отзыв: {review_text}"
+    )
+    _safe_send_message(text)
 
 
 def run_polling() -> None:

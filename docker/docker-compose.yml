@@ -54,6 +54,22 @@ services:
     networks:
       - portfolio_network
 
+  telegram_bot:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: telegram_bot_raya
+    command: python manage.py bot
+    volumes:
+      - ../app:/app       # исправлено
+    env_file:
+      - ../.env
+    depends_on:
+      - db_raya
+      - web_raya
+    networks:
+      - portfolio_network
+
 networks:
   portfolio_network:
     driver: bridge
