@@ -8,3 +8,4 @@ sqlparse==0.5.3
 tzdata==2025.2
 django-ckeditor==6.7.1
 pyTelegramBotAPI
+gunicorn==21.2.0
