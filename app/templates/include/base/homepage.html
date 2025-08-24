@@ -147,7 +147,7 @@ contact at highhay dot com
       "name": "{% if settings %}{{ settings.title }}{% else %}AliaTex{% endif %}",
       "url": "{{ request.scheme }}://{{ request.get_host }}",
       "logo": "{% if settings and settings.logo %}{{ settings.logo.url }}{% else %}{% static 'img/logo.png' %}{% endif %}",
-      "description": "{% if settings and settings.description %}{{ settings.description|striptags|truncatechars:160 }}{% else %}Профессиональные услуги и креативные решения{% endif %}",
+      "description": "{% if settings and settings.description %}{{ settings.description|striptags|truncatechars:160 }}{% else %}Профессиональный швейный цех с полным циклом производства. Пошив корпоративной, специальной и индивидуальной одежды на заказ.{% endif %}",
       "sameAs": [
         {% if settings.instagram %}"{{ settings.instagram }}"{% endif %}
         {% if settings.facebook %},"{{ settings.facebook }}"{% endif %}
