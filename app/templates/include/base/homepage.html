@@ -13,8 +13,9 @@ contact at highhay dot com
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <!-- Title & Meta -->
-  <title itemprop="name">{% if settings %}{{ settings.title }}{% if settings.slogan %} — {{ settings.slogan|truncatechars:60 }}{% endif %}{% else %}AliaTex{% endif %}</title>
-  <meta name="description" itemprop="description" content="{% if settings and settings.description %}{{ settings.description|striptags|truncatechars:160 }}{% else %}Креативное портфолио и профессиональные услуги. Современный адаптивный сайт с плавными анимациями.{% endif %}">
+  <title itemprop="name">{% if settings %}{{ settings.title }}{% if settings.slogan %} — {{ settings.slogan|truncatechars:60 }}{% endif %}{% else %}Швейный цех AliaTex | Пошив одежды на заказ | Бишкек{% endif %}</title>
+  <meta name="description" itemprop="description" content="{% if settings and settings.description %}{{ settings.description|striptags|truncatechars:160 }}{% else %}Профессиональный швейный цех в Бишкеке. Пошив одежды на заказ для женщин, мужчин и детей. Индивидуальный пошив, корпоративная одежда, ремонт и перешив.{% endif %}">
+  <meta name="keywords" content="швея, швейный цех, пошив одежды на заказ, ателье Бишкек, пошив платьев, ремонт одежды, индивидуальный пошив, корпоративная одежда, оптовый пошив одежды, швейное производство, пошив формы для компаний, пошив спецодежды, униформа для ресторанов, медицинская форма, корпоративный стиль, пошив рабочей одежды, пошив формы для официантов, производство одежды оптом, пошив корпоративной формы, пошив униформы для бизнеса, пошив спецодежды оптом, пошив форменной одежды, пошив корпоративной одежды, пошив униформы для гостиниц, пошив униформы для салонов красоты">
   
   <!-- Canonical & Alternate URLs -->
   <link rel="canonical" href="{{ request.build_absolute_uri|default:'/' }}">
@@ -40,21 +41,93 @@ contact at highhay dot com
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ request.build_absolute_uri|default:'/' }}">
-  <meta property="og:title" content="{% if settings %}{{ settings.title }}{% if settings.slogan %} — {{ settings.slogan|truncatechars:60 }}{% endif %}{% else %}AliaTex{% endif %}">
-  <meta property="og:description" content="{% if settings and settings.description %}{{ settings.description|striptags|truncatechars:200 }}{% else %}Креативное портфолио, услуги и кейсы. Профессиональные решения для вашего бизнеса.{% endif %}">
+  <meta property="og:title" content="{% if settings %}{{ settings.title }}{% if settings.slogan %} — {{ settings.slogan|truncatechars:60 }}{% endif %}{% else %}Швейный цех AliaTex | Пошив одежды на заказ | Бишкек{% endif %}">
+  <meta property="og:description" content="{% if settings and settings.description %}{{ settings.description|striptags|truncatechars:200 }}{% else %}Профессиональный швейный цех в Бишкеке. Пошив одежды на заказ для женщин, мужчин и детей.{% endif %}">
   <meta property="og:image" content="{% if settings and settings.og_image %}{{ settings.og_image.url }}{% else %}{% static 'img/og-image.jpg' %}{% endif %}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="AliaTex - Швейный цех">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="{{ request.build_absolute_uri|default:'/' }}">
-  <meta name="twitter:title" content="{% if settings %}{{ settings.title }}{% if settings.slogan %} — {{ settings.slogan|truncatechars:60 }}{% endif %}{% else %}AliaTex{% endif %}">
-  <meta name="twitter:description" content="{% if settings and settings.description %}{{ settings.description|striptags|truncatechars:200 }}{% else %}Креативное портфолио, услуги и кейсы. Профессиональные решения для вашего бизнеса.{% endif %}">
+  <meta name="twitter:title" content="{% if settings %}{{ settings.title }}{% if settings.slogan %} — {{ settings.slogan|truncatechars:60 }}{% endif %}{% else %}Швейный цех AliaTex | Пошив одежды на заказ | Бишкек{% endif %}">
+  <meta name="twitter:description" content="{% if settings and settings.description %}{{ settings.description|striptags|truncatechars:200 }}{% else %}Профессиональный швейный цех в Бишкеке. Пошив одежды на заказ для женщин, мужчин и детей.{% endif %}">
   <meta name="twitter:image" content="{% if settings and settings.og_image %}{{ settings.og_image.url }}{% else %}{% static 'img/og-image.jpg' %}{% endif %}">
   
-  <!-- Structured Data -->
+  <!-- Structured Data for Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "AliaTex - Швейный цех",
+    "image": "{% if settings and settings.logo %}{{ settings.logo.url }}{% else %}{% static 'img/logo.png' %}{% endif %}",
+    "@id": "{{ request.scheme }}://{{ request.get_host }}",
+    "url": "{{ request.scheme }}://{{ request.get_host }}",
+    "telephone": "{% if settings and settings.phone %}{{ settings.phone }}{% endif %}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Бишкек",
+      "addressCountry": "KG"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "42.8746",
+      "longitude": "74.5698"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "priceRange": "$$",
+    "makesOffer": ["Пошив одежды", "Ремонт одежды", "Корпоративная одежда", "Оптовый пошив", "Униформа для бизнеса", "Спецодежда", "Форменная одежда", "Медицинская форма", "Ресторанная униформа", "Рабочая одежда", "Корпоративный стиль"],
+    "areaServed": ["Бишкек", "Чуйская область", "Кыргызстан"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Услуги швейного цеха",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Оптовый пошив одежды",
+            "description": "Крупносерийный пошив корпоративной и форменной одежды от 50 штук"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Корпоративная униформа",
+            "description": "Разработка и пошив фирменной униформы для бизнеса"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Спецодежда на заказ",
+            "description": "Пошив рабочей и защитной одежды по индивидуальным лекалам"
+          }
+        }
+      ]
+    },
+    "sameAs": [
+      "{% if settings.instagram %}{{ settings.instagram }}{% endif %}",
+      "{% if settings.whatsapp %}{{ settings.whatsapp }}{% endif %}"
+    ]
+  }
+  </script>
   <script type="application/ld+json">
   [
     {
