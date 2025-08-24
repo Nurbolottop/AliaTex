@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'apps.cms',
     'apps.index',
     'apps.contacts',
+    'apps.telegram_bot',
 ]
 
 MIDDLEWARE = [
