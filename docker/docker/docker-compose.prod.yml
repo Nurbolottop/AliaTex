@@ -1,0 +1,76 @@
+version: '3.8'
+
+services:
+  db_aliya:
+    image: postgres:14
+    container_name: postgres_db_aliya
+    env_file:
+      - ../.env
+    volumes:
+      - postgres_data_aliya:/var/lib/postgresql/data
+    networks:
+      - portfolio_network_aliya
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: always
+
+  redis_aliya:
+    image: redis:6
+    container_name: redis_aliya
+    networks:
+      - portfolio_network_aliya
+    restart: always
+
+  web_aliya:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: django_web_aliya
+    command: sh -c "/entrypoint.sh && gunicorn core.wsgi:application --bind 0.0.0.0:8000"
+    volumes:
+      - ../app:/app
+      - ../app/static:/app/static
+      - ../app/media:/app/media
+    env_file:
+      - ../.env
+    environment:
+      - DJANGO_SETTINGS_MODULE=core.settings
+    depends_on:
+      db_aliya:
+        condition: service_healthy
+      redis_aliya:
+        condition: service_started
+    ports:
+      - "127.0.0.1:9002:8000"   # наружу только на localhost, чтобы не конфликтовать
+    networks:
+      - portfolio_network_aliya
+    restart: always
+
+  telegram_bot:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: telegram_bot_aliya
+    command: python manage.py bot
+    volumes:
+      - ../app:/app
+    env_file:
+      - ../.env
+    depends_on:
+      db_aliya:
+        condition: service_healthy
+      web_aliya:
+        condition: service_started
+    networks:
+      - portfolio_network_aliya
+    restart: always
+
+networks:
+  portfolio_network_aliya:
+    driver: bridge
+
+volumes:
+  postgres_data_aliya:
